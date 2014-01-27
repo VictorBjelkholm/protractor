@@ -17,7 +17,7 @@ Install protractor with.
 
 Start up a selenium server (See the appendix below for help with this). By default, the tests expect the selenium server to be running at `http://localhost:4444/wd/hub`.
 
-The node module's example folder contains a simple test suite which runs against angularjs.org. Run with: 
+The node module's example folder contains a simple test suite which runs against angularjs.org. Run with:
 
     protractor example/conf.js
 
@@ -48,7 +48,7 @@ The configuration file must specify a way to connection to webdriver. This can b
  *   `seleniumServerJar`: The location of the selenium standalone .jar file on your machine. Protractor will use this to start up the selenium server.
  *   `sauceUser` and `sauceKey`: The username and key for a [SauceLabs](http://www.saucelabs.com) account. Protractor will use this to run tests on SauceLabs.
 
-The runner exposes global variables `browser`, `by` and `element`. Check out [getting started docs](https://github.com/angular/protractor/blob/master/docs/getting-started.md) to learn how to write a test.
+The runner exposes global variables `browser`, `By` and `element`. Check out [getting started docs](https://github.com/angular/protractor/blob/master/docs/getting-started.md) to learn how to write a test.
 
 ```javascript
 // myTest.js
@@ -56,9 +56,9 @@ describe('angularjs homepage', function() {
   it('should greet the named user', function() {
     browser.get('http://www.angularjs.org');
 
-    element(by.model('yourName')).sendKeys('Julie');
+    element(By.model('yourName')).sendKeys('Julie');
 
-    var greeting = element(by.binding('yourName'));
+    var greeting = element(By.binding('yourName'));
 
     expect(greeting.getText()).toEqual('Hello Julie!');
   });
